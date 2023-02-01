@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
-import preact from '@preact/preset-vite'
-import path, {resolve} from 'path'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,5 +9,5 @@ export default defineConfig({
       {find: "@", replacement: "/src"}
     ],
   },
-  plugins: [preact()],
+  plugins: [react()],
 })

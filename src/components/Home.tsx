@@ -1,7 +1,18 @@
+import { loginState } from '@/atom';
+import { useSetRecoilState } from 'recoil';
+import ToDos from './ToDos';
+
 function Home() {
+  const setIsLoggedIn = useSetRecoilState(loginState);
+  const onClick = () => {
+    localStorage.clear();
+    setIsLoggedIn(false);
+  };
+
   return (
     <div>
-      <h1>Welecome Home</h1>
+      <input type="button" onClick={onClick} value="Log Out" />
+      <ToDos />
     </div>
   );
 }
